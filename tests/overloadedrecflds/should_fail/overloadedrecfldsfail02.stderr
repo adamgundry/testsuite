@@ -1,0 +1,33 @@
+
+overloadedrecfldsfail02.hs:11:5:
+    No instance for T {x :: Bool}
+      arising from an overloaded record field
+    The field ‛x’ of ‛T’ cannot be overloaded,
+      as its type is universally or existentially quantified
+    In the expression: x
+    In the expression: x (MkT True) :: Bool
+    In an equation for ‛a’: a = x (MkT True) :: Bool
+
+overloadedrecfldsfail02.hs:12:5:
+    No instance for U {x :: t1} arising from an overloaded record field
+    The field ‛x’ of ‛U’ cannot be overloaded,
+      as its type is universally or existentially quantified
+    In the expression: x
+    In the expression: x (MkU id)
+    In an equation for ‛b’: b = x (MkU id)
+
+overloadedrecfldsfail02.hs:13:5:
+    No instance for U {y :: t0} arising from an overloaded record field
+    The field ‛y’ of ‛U’ cannot be overloaded,
+      as its type is universally or existentially quantified
+    In the expression: y
+    In the expression: y (MkU2 (\ _ -> ()))
+    In an equation for ‛c’: c = y (MkU2 (\ _ -> ()))
+
+overloadedrecfldsfail02.hs:14:5:
+    No instance for (Int -> Int) {x :: Bool}
+      arising from an overloaded record field
+    The type ‛(->)’ does not have a field ‛x’
+    In the expression: x
+    In the expression: x ((\ x -> x) :: Int -> Int) :: Bool
+    In an equation for ‛d’: d = x ((\ x -> x) :: Int -> Int) :: Bool
