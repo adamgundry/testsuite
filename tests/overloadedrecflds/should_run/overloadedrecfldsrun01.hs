@@ -23,9 +23,10 @@ data X a = forall e . MkX { existential :: (Int, e)
                           , universal   :: (forall b . b) -> ()
                           , x           :: a }
 
--- We can have data families too
+-- We can have data families too, provided a single data family
+-- doesn't overload the same field name
 data family F (a :: *) (b :: *) :: * -> *
-data instance F Int b Int = MkF { foo :: Int }
+data instance F Int b Int = MkF { foo :: Int } | MkF' { foo :: Int }
 data instance F Int b Bool = MkF2 { bar :: Bool }
 
 

@@ -1,0 +1,6 @@
+
+overloadedrecfldsfail03.hs:6:34:
+    Multiple declarations of ‛foo’
+    Declared at: overloadedrecfldsfail03.hs:5:34
+                 overloadedrecfldsfail03.hs:6:34
+    (Fields of a single data family cannot be overloaded)
