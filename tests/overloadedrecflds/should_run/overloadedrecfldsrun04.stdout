@@ -1,0 +1,3 @@
+data Main.R = Main.MkR {Main.$sel_foo_R :: GHC.Types.Int}
+instance b_0 ~ GHC.Types.Int => GHC.Records.Has Main.R "foo" b_0
+42
