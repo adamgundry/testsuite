@@ -1,0 +1,3 @@
+MkU {bar = MkT MkF, baz = MkT [False]}
+MkV {bar = MkT (Just 6), baz = MkT [False]}
+MkX {bar = MkW {foo = False}}
