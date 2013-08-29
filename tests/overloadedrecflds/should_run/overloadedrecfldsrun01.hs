@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedRecordFields, DataKinds, KindSignatures,
              ExistentialQuantification, RankNTypes, TypeFamilies #-}
-{-# OPTIONS_GHC -fwarn-unused-imports -fwarn-unused-binds -fwarn-qualified-overloaded-record-fields #-}
+{-# OPTIONS_GHC -fwarn-unused-imports -fwarn-unused-binds #-}
 
 import GHC.TypeLits (Symbol)
 import GHC.Records
@@ -59,7 +59,7 @@ h = bar (MkF2 True)
 main = do  print (x s)
            print (x (MkT False id True))
            print (y t (x t))
-           print (I.x (MkU True False))
+           print (x (MkU True False))
            print (x (MkV 3))
            print (get_x a)
            print b
