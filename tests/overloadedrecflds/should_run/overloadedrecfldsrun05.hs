@@ -29,28 +29,5 @@ x = setField (Proxy :: Proxy "bar") (MkU (MkT [3]) (MkT [False])) (MkT MkF)
 y = setField (Proxy :: Proxy "bar") (MkV (MkT [3]) (MkT [False])) (MkT (Just 6))
 
 
-
-type family Foo b
-type instance Foo Int = Bool
-type instance Foo Bool = Int
-
-data W a = MkW { foo :: Foo a }
-
-deriving instance Show (Foo a) => Show (W a)
-
-data X b = MkX { bar :: W (Foo b) }
-
-deriving instance Show (Foo (Foo a)) => Show (X a)
-
-r :: W Int
-r = MkW { foo = True }
-
--- Updates cannot change types, since the variables are not rigid
-z :: X Bool
-z = setField (Proxy :: Proxy "bar") (MkX r) $
-      setField (Proxy :: Proxy "foo") r False
-
-
 main = do  print x
            print y
-           print z
