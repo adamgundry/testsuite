@@ -1,8 +1,7 @@
-{-# LANGUAGE OverloadedRecordFields, TypeFamilies #-}
+{-# LANGUAGE OverloadedRecordFields #-}
 
-data family F a
+foo = True
 
-data instance F Int  = MkFInt  { foo :: Int }
-data instance F Bool = MkFBool { foo :: Bool }
+data T = MkT { foo :: Int }
 
-main = return ()
+main = print foo
