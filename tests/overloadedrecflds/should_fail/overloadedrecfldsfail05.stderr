@@ -1,0 +1,5 @@
+
+overloadedrecfldsfail05.hs:8:1:
+    Cannot give a type instance for ‛GetResult’
+      (use -XOverloadedRecordFields instead)
+    In the type instance declaration for ‛GetResult’

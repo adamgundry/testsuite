@@ -4,3 +4,4 @@ test('overloadedrecfldsfail03', normal, compile_fail, [''])
 test('overloadedrecfldsfail04',
      extra_clean(['OverloadedRecFldsImport.hi', 'OverloadedRecFldsImport.o']),
      multimod_compile_fail, ['overloadedrecfldsfail04', ''])
+test('overloadedrecfldsfail05', normal, compile_fail, [''])
