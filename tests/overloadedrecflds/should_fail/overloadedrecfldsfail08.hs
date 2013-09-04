@@ -7,5 +7,7 @@ import OverloadedRecFldsFail08_A
 a = x (MkT True) :: Bool
 b = y (MkU id)
 c = z (MkU2 (\ _ -> ()))
+d = foo (MkFInt 42)
+e = foo (MkFBool id)
 
 main = return ()
