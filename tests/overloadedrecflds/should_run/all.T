@@ -16,3 +16,4 @@ test('overloadedrecfldsrun08',
                   'OverloadedRecFldsRun08_C.hi', 'OverloadedRecFldsRun08_C.o']),
      multimod_compile_and_run, ['overloadedrecfldsrun08', ''])
 test('overloadedrecfldsrun10', exit_code(1), compile_and_run, [''])
+test('overloadedrecfldsrun11', normal, compile_and_run, [''])
