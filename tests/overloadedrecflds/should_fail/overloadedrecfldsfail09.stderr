@@ -1,0 +1,20 @@
+
+overloadedrecfldsfail09.hs:6:15:
+    Illegal type instance declaration for ‛GetResult’
+      (Use -XOverloadedRecordFields instead.)
+    In the type instance declaration for ‛GetResult’
+
+overloadedrecfldsfail09.hs:7:15:
+    Illegal type instance declaration for ‛SetResult’
+      (Use -XOverloadedRecordFields instead.)
+    In the type instance declaration for ‛SetResult’
+
+overloadedrecfldsfail09.hs:8:10:
+    Illegal instance declaration for ‛Has Int "foo" Int’
+      (Use -XOverloadedRecordFields instead.)
+    In the instance declaration for ‛Has Int "foo" Int’
+
+overloadedrecfldsfail09.hs:9:10:
+    Illegal instance declaration for ‛Upd Int "foo" Int’
+      (Use -XOverloadedRecordFields instead.)
+    In the instance declaration for ‛Upd Int "foo" Int’
