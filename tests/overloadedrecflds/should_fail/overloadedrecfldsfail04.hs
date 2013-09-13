@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedRecordFields #-}
 
-import OverloadedRecFldsImport as I
+import OverloadedRecFldsFail04_A as I
 
 -- Qualified overloaded fields are not allowed here
 x' = I.x

@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedRecordFields, TypeFamilies #-}
 
-module OverloadedRecFldsRun08_C ( F(..) ) where
+module OverloadedRecFldsRun08_B ( F(..) ) where
 
 import OverloadedRecFldsRun08_A ( F(..) )
 
-data instance F () = MkFUnit { foo :: () }
+data instance F Int = MkFInt { foo :: Int }

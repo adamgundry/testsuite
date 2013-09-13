@@ -4,7 +4,7 @@
 
 import GHC.TypeLits (Symbol)
 import GHC.Records
-import OverloadedRecFldsImport as I (U(MkU, x), V(..), Unused(unused))
+import OverloadedRecFldsRun01_A as I (U(MkU, x), V(..), Unused(unused))
 
 data Proxy (f :: Symbol) = Proxy
 
