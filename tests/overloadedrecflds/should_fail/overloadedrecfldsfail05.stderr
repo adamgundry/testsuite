@@ -1,5 +1,10 @@
 
-overloadedrecfldsfail05.hs:8:1:
-    Cannot give a type instance for ‛GetResult’
-      (use -XOverloadedRecordFields instead)
+overloadedrecfldsfail05.hs:8:15:
+    Illegal type instance declaration for ‛GetResult’
+      (Use -XOverloadedRecordFields instead.)
     In the type instance declaration for ‛GetResult’
+
+overloadedrecfldsfail05.hs:9:10:
+    Illegal instance declaration for ‛Has Person "fullName" String’
+      (Use -XOverloadedRecordFields instead.)
+    In the instance declaration for ‛Has Person "fullName" String’
