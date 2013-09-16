@@ -11,10 +11,10 @@ overloadedrecfldsfail09.hs:7:15:
 
 overloadedrecfldsfail09.hs:8:10:
     Illegal instance declaration for ‛Has Int "foo" Int’
-      (Use -XOverloadedRecordFields instead.)
+      The class is abstract, manual instances are not permitted.
     In the instance declaration for ‛Has Int "foo" Int’
 
 overloadedrecfldsfail09.hs:9:10:
     Illegal instance declaration for ‛Upd Int "foo" Int’
-      (Use -XOverloadedRecordFields instead.)
+      The class is abstract, manual instances are not permitted.
     In the instance declaration for ‛Upd Int "foo" Int’

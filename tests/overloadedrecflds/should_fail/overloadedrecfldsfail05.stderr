@@ -6,5 +6,5 @@ overloadedrecfldsfail05.hs:8:15:
 
 overloadedrecfldsfail05.hs:9:10:
     Illegal instance declaration for ‛Has Person "fullName" String’
-      (Use -XOverloadedRecordFields instead.)
+      The class is abstract, manual instances are not permitted.
     In the instance declaration for ‛Has Person "fullName" String’
