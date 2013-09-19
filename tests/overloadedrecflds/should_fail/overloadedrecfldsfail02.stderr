@@ -9,7 +9,7 @@ overloadedrecfldsfail02.hs:11:5:
     In an equation for ‛a’: a = x (MkT True) :: Bool
 
 overloadedrecfldsfail02.hs:12:5:
-    No instance for U {x :: t1}
+    No instance for U {x :: GHC.Records.GetResult U "x"}
       arising from a use of the record selector ‛x’
     The field ‛x’ of ‛U’ cannot be overloaded,
       as its type is universally quantified
@@ -18,7 +18,7 @@ overloadedrecfldsfail02.hs:12:5:
     In an equation for ‛b’: b = x (MkU id)
 
 overloadedrecfldsfail02.hs:13:5:
-    No instance for U {y :: t0}
+    No instance for U {y :: GHC.Records.GetResult U "y"}
       arising from a use of the record selector ‛y’
     The field ‛y’ of ‛U’ cannot be overloaded,
       as its type is universally quantified
