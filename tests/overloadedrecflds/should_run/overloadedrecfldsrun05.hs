@@ -1,7 +1,8 @@
 {-# LANGUAGE OverloadedRecordFields, DataKinds, PolyKinds, GADTs,
-             StandaloneDeriving, TypeFamilies, UndecidableInstances #-}
+             StandaloneDeriving, TypeFamilies, UndecidableInstances,
+             MagicHash #-}
 
-import Data.Proxy
+import GHC.Prim (Proxy#, proxy#)
 import GHC.Records
 
 data T (a :: x -> *)(b :: x) :: * where
@@ -22,11 +23,11 @@ data F (f :: * -> *) = MkF
 
 -- Updates to fields of U may change kinds:
 -- x :: U F f [] Bool
-x = setField (Proxy :: Proxy "bar") (MkU (MkT [3]) (MkT [False])) (MkT MkF)
+x = setField (proxy# :: Proxy# "bar") (MkU (MkT [3]) (MkT [False])) (MkT MkF)
 
 -- Updates to fields of V may not, but may change types:
 -- y :: V Maybe Int [] Bool
-y = setField (Proxy :: Proxy "bar") (MkV (MkT [3]) (MkT [False])) (MkT (Just 6))
+y = setField (proxy# :: Proxy# "bar") (MkV (MkT [3]) (MkT [False])) (MkT (Just 6))
 
 
 main = do  print x

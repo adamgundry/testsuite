@@ -1,7 +1,8 @@
 {-# LANGUAGE OverloadedRecordFields, DataKinds, PolyKinds, GADTs,
-             StandaloneDeriving, TypeFamilies, UndecidableInstances #-}
+             StandaloneDeriving, TypeFamilies, UndecidableInstances,
+             MagicHash #-}
 
-import Data.Proxy
+import GHC.Prim (Proxy#, proxy#)
 import GHC.Records
 
 type family Foo b
@@ -21,7 +22,7 @@ r = MkW { foo = True }
 
 -- Updates cannot change types, since the variables are not rigid
 z :: X Bool
-z = setField (Proxy :: Proxy "bar") (MkX r) $
-      setField (Proxy :: Proxy "foo") r False
+z = setField (proxy# :: Proxy# "bar") (MkX r) $
+      setField (proxy# :: Proxy# "foo") r False
 
 main = print z

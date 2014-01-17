@@ -1,12 +1,11 @@
 {-# LANGUAGE OverloadedRecordFields, DataKinds, KindSignatures,
-             ExistentialQuantification, RankNTypes, TypeFamilies #-}
+             ExistentialQuantification, RankNTypes, TypeFamilies,
+             MagicHash #-}
 {-# OPTIONS_GHC -fwarn-unused-imports -fwarn-unused-binds #-}
 
-import GHC.TypeLits (Symbol)
+import GHC.Prim (proxy#, Proxy#)
 import GHC.Records
 import OverloadedRecFldsRun01_A as I (U(MkU, x), V(..), Unused(unused))
-
-data Proxy (f :: Symbol) = Proxy
 
 data S = MkS { x :: Int }
   deriving Show
@@ -43,12 +42,12 @@ c = (t :: T) { x = False }   -- type signature on record expression
 get_x :: r { x :: a } => r -> a
 get_x r = x r
 
-set_x :: Upd r "x" a => r -> a -> SetResult r "x" a
-set_x   = setField (Proxy :: Proxy "x")
+set_x :: Upd r "x" a => r -> a -> UpdTy r "x" a
+set_x   = setField (proxy# :: Proxy# "x")
 
 -- Type-changing update is possible in places
 d = set_x w (False, False, 'x')
-e = setField (Proxy :: Proxy "z") d 42
+e = setField (proxy# :: Proxy# "z") d 42
 
 f :: Int
 f = x (set_x (MkX {x = True}) 42)

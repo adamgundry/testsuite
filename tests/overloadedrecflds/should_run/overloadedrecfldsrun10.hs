@@ -1,6 +1,6 @@
-{-# LANGUAGE OverloadedRecordFields, DataKinds #-}
+{-# LANGUAGE OverloadedRecordFields, DataKinds, MagicHash #-}
 
-import Data.Proxy
+import GHC.Prim (Proxy#, proxy#)
 import GHC.Records
 
 data T = MkT { foo :: Int } | MkT2 { bar :: Bool }
@@ -9,4 +9,4 @@ data T = MkT { foo :: Int } | MkT2 { bar :: Bool }
 x = MkT 42
 
 -- This should generate a suitable runtime error
-main = print (setField (Proxy :: Proxy "bar") x True)
+main = print (setField (proxy# :: Proxy# "bar") x True)

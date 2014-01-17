@@ -5,6 +5,6 @@ import GHC.Records
 
 data Person = MkPerson { firstName :: String, lastName :: String }
 
-type instance GetResult Person "fullName" = String
-instance Has Person "fullName" String where
+type instance FldTy Person "fullName" = String
+instance Has Person "fullName" where
   getField _ p = firstName p ++ " " ++ lastName p
