@@ -10,6 +10,6 @@ $(return [DataD [] (mkName "R") [] [RecC (mkName "MkR") [(mkName "foo", NotStric
 -- ... and check that we can inspect it
 main = do  putStrLn $(do { info <- reify ''R
                          ; lift (pprint info) })
-           putStrLn $(do { insts <- reifyInstances ''Has [ConT ''R, LitT (StrTyLit "foo")]
+           putStrLn $(do { insts <- reifyInstances ''Has [ConT ''R, LitT (StrTyLit "foo"), ConT ''Int]
                          ; lift (pprint insts) })
            print (foo (MkR { foo = 42 }))

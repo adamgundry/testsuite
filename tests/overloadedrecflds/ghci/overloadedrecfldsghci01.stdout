@@ -1,6 +1,4 @@
-foo
-  :: GHC.Records.Accessor t t1 "foo" =>
-     t t1 (GHC.Records.FldTy t1 "foo")
+foo :: GHC.Records.Accessor t t1 "foo" t2 => t t1 t2
 42
 True
 
